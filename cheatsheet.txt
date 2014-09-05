@@ -1,0 +1,209 @@
+*****Ubuntu 14.04 Fresh Install*****
+
+// Install VIM
+sudo apt-get install vim
+
+// Get LAMP Stack in one line
+sudo apt-get update
+sudo apt-get install lamp-server^
+
+// Install MyPhpAdmin
+sudo apt-get update
+sudo apt-get install phpmyadmin
+
+// Edit your apache config to point to phpmyadmin apache config
+sudo nano /etc/apache2/apache2.conf
+ 
+// Add this line 
+Include /etc/phpmyadmin/apache.conf
+
+// Restart server
+sudo service apache2 restart
+
+// Install Git
+sudo apt-get update
+sudo apt-get install git
+
+// Install cURL 
+sudo apt-get install curl
+
+// Install Composer
+curl -sS https://getcomposer.org/installer | php
+
+// Make composer.phar global
+sudo mv composer.phar /usr/local/bin/composer
+
+// Instal php 5 cURL
+sudo apt-get install php5-curl
+
+// Enable mod-rewrite
+sudo a2enmod rewrite
+sudo service apache2 restart
+
+// Install MCrypt
+sudo apt-get install php5-mcrypt
+
+// Enable MCrypt
+sudo php5enmod mcrypt
+
+// Goto web directory
+cd /var/www
+
+// Allow writing to web directory
+sudo chmod -R a+rwx /var/www
+
+// Restart Apache
+sudo service apache2 restart
+
+// Lists files in ssh directory, then if needed proceed to generate RSA key
+ls -al ~/.ssh  
+
+// Genereates a new key
+ssh-keygen -t rsa -C "cammac1984@gmail.com" 
+
+// Start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+
+// Add it to your keys folder
+ssh-add ~/.ssh/id_rsa
+
+// Copy to your server
+ssh-copy-id root@innovativegrower.com
+
+git clone root@innovativegrower.com:ss.git 
+or
+git clone user@123.45.56.78:yourfilename.git
+
+// Edit your .gitignore file
+Add all config files and nbproject folder to .gitignore
+
+// Create new project
+composer create-project laravel/laravel yaktracker --prefer-dist
+
+// Enable writes to app storage directory
+chmod -R a+rwx app/storage
+
+// Update Hosts File
+sudo vim /etc/apache2/sites-available/000-default.conf 
+
+or 
+
+// *Better, create new file called default.conf
+sudo vim /etc/apache2/sites-available/default.conf
+
+Add this
+<VirtualHost *:80>
+    SetEnv LARAVEL_ENV local
+    DocumentRoot "/var/www/ss/public"
+    ServerName showstop.here
+
+    <Directory "/var/www/ss/public">
+        Options +FollowSymLinks -MultiViews
+        AllowOverride all
+    </Directory>
+</VirtualHost>
+
+// Update Local Hosts File
+sudo vim /etc/hosts
+127.0.0.1       yourwebsitename.here
+
+// Restart Apache
+sudo service apache2 restart
+
+// Update your dependencies
+composer update
+
+// Autoload class map
+composer dump-autoload
+
+//******Extensions*********
+// Vundle for Vim
+cd ~
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sudo vim .vimrc
+
+*******************BEGIN COPY PASTE AREA
+set nocompatible " be iMproved, required
+filetype off " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end() " required
+filetype plugin indent on " required
+******************END OF COPY PASTE AREA
+Then Restart Vim
+:BundleInstall
+
+Then restart Vim add this (below  "Plugin 'gmarik/Vundle.vim'" ):
+Bundle 'scrooloose/nerdtree'
+
+Restart vim run:
+:PluginUpdate
+
+***To remove a Plugin
+:PluginClean
+
+// Add to .vimrc
+" NerdTree
+map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+map <leader>e :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeFind<CR>
+
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
+
+// Adding Fugitive for git commands
+Bundle 'groenewege/vim-less'
+
+// Get font for powerline
+https://github.com/Lokaltog/powerline-fonts/archive/master.zip
+
+// Put your favorite font in ~/.fonts directory
+
+// Update cache for fonts, goto root first
+fc-cache -vf ~/.fonts
+// Adding Lightline with Powerline
+Bundle 'itchyny/lightline.vim'
+Bundle 'cocopon/lightline-hybrid.vim'
+
+// Image Magick
+sudo apt-get update
+sudo apt-get install imagemagick php5-imagick
+
+// Instal Ember Extensions
+sudo apt-get update
+
+// First get nodejs
+sudo apt-get install nodejs
+
+// Then get NPM (Node package manager)
+sudo apt-get install npm
+
+// Do this
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+
+sudo npm install -g bower
+sudo npm install -g phantomjs
+
+sudo npm install -g ember-cli
+
+sudo npm install --save-dev broccoli-ember-hbs-template-compiler
+sudo npm install --save-dev broccoli-less-single
+
+// Get Sublime 3
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
