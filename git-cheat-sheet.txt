@@ -1,93 +1,41 @@
-Git Cheat Sheet (CRE8)
-
-
-Git Commands
+Git Cheat Sheet 
 
 Check origin URL:
 git remote show origin
 
-
-Reset origin remote to GitLab:
-
-For dashboard repo:
+Remove origin
 git remote rm origin
-git remote add origin git@gitlab.ltwlabs.com:cr8/cr8-dash.git
 
-For web repo:
-git remote rm origin
-git remote add origin git@gitlab.ltwlabs.com:cr8/cr8-web.git
+Add new origin
+git remote add origin root@yoursite.com:path/to/gitfile/cr8-dash.git
 
-
-Set origin remote to GitLab:
-
-For dashboard repo:
-git remote add origin git@gitlab.ltwlabs.com:cr8/cr8-dash.git
-
-For web repo:
-git remote add origin git@gitlab.ltwlabs.com:cr8/cr8-web.git
-
-
-Clone the CR8 Dashboard repo:
-git clone git@gitlab.ltwlabs.com:cr8/cr8-dash.git
-
-Clone the CR8 Web repo:
-git clone git@gitlab.ltwlabs.com:cr8/cr8-web.git
-
+Clone a repo:
+git clone root@yoursite.com:path/to/gitfile/cr8-dash.git
 
 Create new feature branch:
 git checkout master
 git checkout -b feature-branch-name
 
-
 Push feature branch to origin:
-git push -u origin feature-branch-name
-
-
-Pull feature branch from origin:
-git fetch origin feature-branch-name
-
+git push origin feature-branch-name
 
 Pull master from origin:
 git pull origin master
 
-
 Check out different branch on your local:
 git checkout feature-branch-name
-
 
 Merge master into feature branch:
 git checkout feature-branch-name
 git merge master
 
-
-Checkout a branch that someone else made and pushed to origin:
+Pull a branch that someone else made and pushed to origin:
 git checkout -b branch-name origin/branch-name 
-// Creates a branch called branch-name and pulls down the branch called branch-name
-
 
 Delete a branch on origin:
 git push origin --delete feature-branch-name
 
-
-Generate an SSH Key & Add to GitLab
-
-Follow these instructions (ignore the note to skip):
-
-https://help.github.com/articles/generating-ssh-keys#platform-windows
-
-Note: if you already have an SSH key that you generated previously, you can use those instead of generating a new one.
-
-After generating your SSH key, login into your GitLab account and go to the profile section. Copy/paste your SSH public key to SSH Key section in your Profile. Note that you have a private and public SSH key. You want to copy your public key to GitLab.
-
-GitLab login URL:
-
-http://gitlab.ltwlabs.com
-
-
-
 Best Practices
-
-
 Branch naming convention
 
 Always separate words with hyphens (“-”).
@@ -97,45 +45,29 @@ If there is a jira ticket for the issue/feature being addressed in the branch, i
 
 Examples:
 
-“colorscheme-tool-improvements”
+“jira-1234-user-login-style-improvements”
 
-“berry-theme-add-slider”
-
-“yz1542-bugfix-stock-image-browser”
-
-“yz1843-font-edit-improvement”
-
-
-Commit Messages
+Commit Messages:
 
 Keep your commit messages succinct yet descriptive.
 
 Example:
-
-“Fixed slider bug in xyz theme”
+“Fixed slider bug on index page”
 
 
 Submitting a QA Request
-
 When submitting a QA request, please include the branch name at the top of the request description. Example:
-
 branch: colorscheme-tool-improvements
-
 
 Submitting a Merge Request
 When submitting a merge request in GitLab, please include the following in the merge request description:
 jira ticket number
 the text: “passed QA”
 
-
-
 Git Shell Tips
 
 Tab Completion
-
 To complete a git command without typing the entire command in manually, use tab completion.  If a command name doesn’t complete, the characters you entered are not unique. In that case press the tab key twice in a row.
 
-
 Command History
-
 Use the “up arrow” and “down arrow” keys to navigate through your command history.
