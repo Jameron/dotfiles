@@ -2,7 +2,6 @@
 
 // Install VIM
 sudo apt-get install vim
-
 // Get LAMP Stack in one line
 sudo apt-get update
 sudo apt-get install lamp-server^
@@ -20,7 +19,7 @@ Include /etc/phpmyadmin/apache.conf
 // Restart server
 sudo service apache2 restart
 
-// Install Git
+// Install Gity
 sudo apt-get update
 sudo apt-get install git
 
@@ -39,6 +38,7 @@ sudo apt-get install php5-curl
 // Enable mod-rewrite
 sudo a2enmod rewrite
 sudo service apache2 restart
+
 
 // Install MCrypt
 sudo apt-get install php5-mcrypt
@@ -105,7 +105,7 @@ Add this
 
 // Update Local Hosts File
 sudo vim /etc/hosts
-127.0.0.1       yourwebsitename.here
+127.0.0.1       showstop.here
 
 // Restart Apache
 sudo service apache2 restart
@@ -166,6 +166,7 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 // Adding Fugitive for git commands
 Bundle 'groenewege/vim-less'
 
+
 // Get font for powerline
 https://github.com/Lokaltog/powerline-fonts/archive/master.zip
 
@@ -207,3 +208,4 @@ sudo npm install --save-dev broccoli-less-single
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-get update
 sudo apt-get install sublime-text-installer
+
