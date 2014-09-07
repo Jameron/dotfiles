@@ -7,10 +7,10 @@ Remove origin
 git remote rm origin
 
 Add new origin
-git remote add origin root@yoursite.com:path/to/gitfile/projectname.git
+git remote add origin root@yoursite.com:path/to/gitfile/cr8-dash.git
 
 Clone a repo:
-git clone root@yoursite.com:path/to/gitfile/projectname.git
+git clone root@yoursite.com:path/to/gitfile/cr8-dash.git
 
 Create new feature branch:
 git checkout master
