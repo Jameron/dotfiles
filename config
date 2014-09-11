@@ -1,0 +1,9 @@
+ServerAliveInterval 60 # keeps connection alive so you do not get bumped off server
+
+Host           ShortSexyName
+HostName       yoursite.com
+IdentityFile   ~/.ssh/id_rsa.pub
+User           root
+
+# Place this in your local ~/.ssh folder
+# To access server type ssh ShortSexyName
