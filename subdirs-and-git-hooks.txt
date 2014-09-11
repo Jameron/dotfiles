@@ -1,0 +1,67 @@
+# ---------- Creating a subdirectory with git repo and hook
+# 1) Edit Vhosts file
+
+# AWS VHosts
+/etc/httpd/conf.d/vhost.conf
+
+# Ubuntu VHosts
+/etc/apache2/sites-available/000-default.conf 
+
+<VirtualHost *:80>
+    DocumentRoot "/var/www/html/yourfolder"
+    ServerName yoursubdomain.yoursite.com
+    <Directory "/var/www/html/yourfolder">
+        #Options -Indexes +FollowSymLinks -MultiViews
+        Options +FollowSymLinks -MultiViews
+        AllowOverride all
+    </Directory>
+</VirtualHost>
+
+
+
+
+
+# --------- Setting up a new project with a git hook
+# 1) ssh into server
+
+$ cd /var/www/html
+$ mkdir yourproject
+
+# AWS
+$ sudo chown -R ec2-user:www yourproject
+
+# Ubuntu
+?????
+
+$ cd /var/www/html/yourproject
+$ git init
+$ vi test.txt
+
+add some text
+esc
+:w
+:q
+
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com
+
+$ git add .
+$ git commit -m "first commit"
+
+$ cd /var/www/git
+$ git clone --bare /var/www/html/yourproject/
+$ cd yourproject.git/hooks
+$ sudo vi post-receive
+
+#!/bin/sh
+GIT_WORK_TREE=/var/www/html/yourfolder git checkout -f
+
+esc
+:w
+:q
+
+#AWS
+$ sudo httpd restart
+
+#Ubuntu
+$ sudo service apache2 restart
