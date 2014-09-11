@@ -60,6 +60,8 @@ esc
 :w
 :q
 
+$ chmod 777 post-receive
+
 #AWS
 $ sudo httpd restart
 
