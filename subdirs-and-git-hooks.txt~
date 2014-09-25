@@ -67,8 +67,3 @@ $ sudo httpd restart
 
 #Ubuntu
 $ sudo service apache2 restart
-
-$ exit
-$ cd /var/www/
-$ git clone yourserver:/var/www/git/yourproject.git
-
