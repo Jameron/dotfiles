@@ -18,22 +18,15 @@
 </VirtualHost>
 
 
-
-
-
-# --------- Setting up a new project with a git hook
+# --------- Setting up a new project with a git hook on EC2 with Ubuntu
 # 1) ssh into server
 
 $ cd /var/www/html
 $ mkdir yourproject
 
-# AWS
-$ sudo chown -R ec2-user:www yourproject
+$ sudo chown -R ubuntu /var/www/html/yourproject
 
-# Ubuntu
-?????
-
-$ cd /var/www/html/yourproject
+$ cd yourproject
 $ git init
 $ vi test.txt
 
@@ -48,7 +41,9 @@ $ git config --global user.email you@example.com
 $ git add .
 $ git commit -m "first commit"
 
-$ cd /var/www/git
+$ cd /home/ubuntu
+$ mkdir git
+$ cd git
 $ git clone --bare /var/www/html/yourproject/
 $ cd yourproject.git/hooks
 $ sudo vi post-receive
@@ -60,10 +55,7 @@ esc
 :w
 :q
 
-$ chmod 777 post-receive
-
-#AWS
-$ sudo httpd restart
+$ chmod 777 post-receive <------ IMPORTANT FOR HOOK TO WORK
 
 #Ubuntu
 $ sudo service apache2 restart
@@ -71,4 +63,3 @@ $ sudo service apache2 restart
 $ exit
 $ cd /var/www/
 $ git clone yourserver:/var/www/git/yourproject.git
-
