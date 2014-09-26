@@ -55,7 +55,7 @@ esc
 :w
 :q
 
-$ chmod 777 post-receive <------ IMPORTANT FOR HOOK TO WORK
+$ chmod 775 post-receive <------ IMPORTANT FOR HOOK TO WORK
 
 #Ubuntu
 $ sudo service apache2 restart
