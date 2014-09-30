@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'mustache/vim-mustache-handlebars'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'w0ng/vim-hybrid'
@@ -14,20 +15,15 @@ Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-fugitive'
 Bundle 'itchyny/lightline.vim'
 Bundle 'cocopon/lightline-hybrid.vim'
-Bundle 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 
 " JS autocompletion
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
-set autoindent
-set smartindent
 set tabstop=4
 set shiftwidth=4
-set expandtab
 
 " Turn line numbering on. Turn it off with "set nonu:"
 set number
@@ -49,6 +45,7 @@ set clipboard=unnamedplus
 set laststatus=2
 set t_Co=256
 noh
+"set title titlestring=%{strftime('%c',getftime(expand('%')))}
 
 " NerdTree
 map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
@@ -63,6 +60,7 @@ let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
+
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
@@ -77,11 +75,15 @@ let g:lightline = {
 	  \ },
 	  \ 'component_function': {
 	  \   'readonly': 'MyReadonly',
-	  \   'fugitive': 'MyFugitive'
+	  \   'fugitive': 'MyFugitive',
 	  \ },
 	  \ 'separator': { 'left': '', 'right': '' },
 	  \ 'subseparator': { 'left': '', 'right': '' }
 	  \ }
+function! MyModified()
+    let lastModified=strftime('%T',getftime(expand('%')))
+    return lastModified
+endfunction
 
     function! MyReadonly()
 		return &readonly ? '' : ''
@@ -96,9 +98,11 @@ let g:lightline = {
 
 let g:indentLine_color_term = 243
 let g:indentLine_char = '︙'   
+set mouse=a
+set mousehide
+set cursorline
 
 " Change colorscheme from default to hybrid
-colorscheme hybrid
+colorscheme hybrid "monokai 
 hi Normal ctermbg=NONE
-
 let g:lightline.colorscheme = 'hybrid'
