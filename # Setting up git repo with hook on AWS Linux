@@ -1,0 +1,105 @@
+# Setting up git repo with hook on a new AWS Linux EC2 instance.
+
+File structure:
+/var/www/git/projectfolder/projectname.git
+/var/www/html/projectfolder/.git
+
+1) Create a new Ec2 instance
+Create you linux instance on aws website.
+SSH in
+
+# Install apache
+$ yum install httpd
+
+2) Create your project folder
+$ cd /var/www/html
+$ sudo mkdir project
+$ cd project
+
+3) Install git
+$ sudo yum install git
+
+$ sudo git init
+$ sudo chmod -R ug+rw /var/www/html/yourproject/.git/
+$ sudo chown -R ec2-user:ec2-user .git/ 
+$ ls -l // Should say owner and group is ec2-user
+
+$ git congif --global user.name "cameron macfarlane"
+$ git config --global user.email "cammac1984@gmail.com"
+$ sudo vi test.txt
+testing123
+:w
+:q
+$ git add .
+$ git commit -m "initial"
+
+$ cd /var/www
+$ sudo mkdir git
+$ cd git
+$ git clone --bare /var/www/html/yourproject/
+
+$ sudo chown -R ec2-user:ec2-user yourproject.git/
+	(should be here: /var/www/git/yourproject/yourproject.git)
+
+$ cd yourproject.git/hooks
+$ sudo vi post-receive
+
+#!/bin/sh
+GIT_WORK_TREE=/var/www/html/yourfolder git checkout -f
+
+$ sudo chmod 775 post-receive
+$ exit
+
+
+3) Setup you web directory, edit httpd.conf 
+$ sudo vi /etc/httpd/conf/httpd.conf
+
+
+
+
+// Clone your repo locally
+$ git clone project:/var/www/git/project/project.git
+
+add your project push to repo, ssh back in 
+
+$ cd /var/www/html/yourproject
+$ chmod -R ug+rw app/storage
+
+// Get Mcrypt
+$ sudo yum install php-mcrypt
+
+2) Install MYSQL Server
+$ sudo yum install mysql-server
+
+# Configure webserver to start up automatically on reboot:
+$ sudo chkconfig httpd on
+$ sudo service httpd start
+
+# Configure MySQL to start up automatically on reboot
+$ sudo chkconfig mysqld on
+$ sudo service mysqld start
+
+# Configure MySQL root user password
+mysqladmin -u root password secret123
+
+# Create a database. 
+mysqladmin -u root -p create database_name
+
+# Set the access database rights.
+mysql -u root -p
+
+# Set the permissions. Replace <your public EC2 DNS address> with the public DNS address of the EC2 instance.
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, LOCK TABLES, CREATE TEMPORARY TABLES ON mydb.* TO 'awsuser'@'<your public EC2 DNS address>' IDENTIFIED BY 'mypassword';
+
+# Set the permissions by using the following command.
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, LOCK TABLES, CREATE TEMPORARY TABLES ON mydb.* TO 'awsuser'@'%' IDENTIFIED BY 'mypassword';
+
+$ Activate the new permissions:
+FLUSH PRIVILEGES;
+
+# Exit the MySQL prompt by typing the following:
+$ exit
+
+3) Adjust the DNS record on your domain provider to point to the EC2 instance's public IP address.
+
+4) Celebrate!
