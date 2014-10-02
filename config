@@ -1,4 +1,4 @@
-ServerAliveInterval 60 # keeps connection alive so you do not get bumped off server
+ServerAliveInterval 60 # Keeps connection alive so you do not get bumped off server
 
 Host           ShortSexyName
 HostName       yoursite.com
