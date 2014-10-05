@@ -1,4 +1,4 @@
-# Setting up git repo with hook on a new AWS Linux EC2 instance.
+cd .# Setting up git repo with hook on a new AWS Linux EC2 instance.
 
 File structure:
 /var/www/git/projectfolder/projectname.git
@@ -84,12 +84,12 @@ add your project push to repo, ssh back in
 $ cd /var/www/html/yourproject
 $ chmod -R ug+rw app/storage
 
-$sudo yum install php55-pdo
-
 
 
 2) Install MYSQL Server
-$ sudo yum install mysql-server
+$ sudo yum install mysql55-server
+$ sudo yum install php55-pdo
+$ sudo yum install php55-mysqlnd
 
 # Configure webserver to start up automatically on reboot:
 $ sudo chkconfig httpd on
