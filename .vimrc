@@ -106,3 +106,6 @@ set cursorline
 colorscheme hybrid "monokai 
 hi Normal ctermbg=NONE
 let g:lightline.colorscheme = 'hybrid'
+
+autocmd VimEnter * echo "Welcome back Cameron! You are amazing!"
+set shortmess+=I
