@@ -1,0 +1,36 @@
+//****** Vim Extensions *********
+// Vundle for Vim
+cd
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sudo vim .vimrc
+
+*******************BEGIN COPY PASTE AREA
+set nocompatible " be iMproved, required
+filetype off " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end() " required
+filetype plugin indent on " required
+******************END OF COPY PASTE AREA
+Then Restart Vim
+:BundleInstall
+
+***To Update Plugins
+:PluginUpdate
+
+***To remove a Plugin
+:PluginClean
+
+// Get font for powerline
+https://github.com/Lokaltog/powerline-fonts/archive/master.zip
+
+// Put your favorite font in ~/.fonts directory
+
+// Update cache for fonts, goto root first
+fc-cache -vf ~/.fonts

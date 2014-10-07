@@ -1,0 +1,23 @@
+Ember Cheat Sheet
+
+// Update
+sudo apt-get update
+
+// Get nodejs
+sudo apt-get install nodejs
+
+// Then get NPM (Node package manager)
+sudo apt-get install npm
+
+// Install bower for dependancy management
+sudo npm install -g bower
+
+// Phantom Js headless WeBKit
+sudo npm install -g phantomjs
+
+// Ember CLI
+sudo npm install -g ember-cli
+
+// Broccoli
+sudo npm install --save-dev broccoli-ember-hbs-template-compiler
+sudo npm install --save-dev broccoli-less-single

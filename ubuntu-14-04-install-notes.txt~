@@ -1,4 +1,4 @@
-Ubuntu 14.04 LAMP Stack Install
+*****Ubuntu 14.04 LAMP Stack Install*****
 
 // Get LAMP Stack in one line
 sudo apt-get update
