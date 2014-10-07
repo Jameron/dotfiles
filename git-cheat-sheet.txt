@@ -1,5 +1,8 @@
 Git Cheat Sheet 
 
+Stop tracking a tracked file:
+git rm -r --cached filename.ext
+
 Check origin URL:
 git remote show origin
 
