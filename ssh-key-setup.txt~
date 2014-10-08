@@ -4,7 +4,7 @@
 ls -al ~/.ssh  
 
 // Generates a new key
-ssh-keygen -t rsa -C "email@email.com" 
+ssh-keygen -t rsa -C "email@gmail.com" 
 
 // Start the ssh-agent in the background
 eval "$(ssh-agent -s)"
