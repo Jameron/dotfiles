@@ -25,6 +25,7 @@ $ sudo yum install git
 
 $ sudo git init
 $ sudo chmod -R ug+rw /var/www/html/yourproject/.git/
+$ cd ..
 $ sudo chown -R ec2-user:ec2-user yourproject/
 $ ls -l // Should say owner and group is ec2-user
 
@@ -99,8 +100,16 @@ $ sudo service httpd start
 $ sudo chkconfig mysqld on
 $ sudo service mysqld start
 
+NEW
+sudo /etc/init.d/mysqld stop
+sudo mysqld_safe --skip-grant-tables &
+mysql -u root
+use mysql;
+update user set password=PASSWORD("mynewpassword") where User='root';
+flush privileges;
+
 # Configure MySQL root user password
-mysqladmin -u root password secret123
+$ mysqladmin -u root password secret123
 
 # Create a database. 
 mysqladmin -u root -p create database_name
