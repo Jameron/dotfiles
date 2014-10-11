@@ -1,5 +1,9 @@
 Git Cheat Sheet 
 
+// Install Git
+sudo apt-get update
+sudo apt-get install git
+
 Stop tracking a tracked file:
 git rm -r --cached filename.ext
 
@@ -14,6 +18,9 @@ git remote add origin root@yoursite.com:path/to/gitfile/projectname.git
 
 Clone a repo:
 git clone root@yoursite.com:path/to/gitfile/projectname.git
+
+// Edit your .gitignore file
+Add all config files and nbproject folder to .gitignore
 
 Create new feature branch:
 git checkout master

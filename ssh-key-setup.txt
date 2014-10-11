@@ -1,0 +1,16 @@
+# Adding you SSH key to a server
+
+// Lists files in ssh directory, then if needed proceed to generate RSA key
+ls -al ~/.ssh  
+
+// Generates a new key
+ssh-keygen -t rsa -C "email@email.com" 
+
+// Start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+
+// Add it to your keys folder
+ssh-add ~/.ssh/id_rsa
+
+// Copy to your server
+ssh-copy-id root@yoursite.com

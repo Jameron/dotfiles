@@ -1,0 +1,69 @@
+// Create new project
+composer create-project laravel/laravel projectname --prefer-dist
+
+// Enable writes to app storage directory
+chmod -R a+rwx app/storage
+
+// Update Hosts File
+sudo vim /etc/apache2/sites-available/000-default.conf 
+
+or 
+
+// *Better, create new file called default.conf
+sudo vim /etc/apache2/sites-available/default.conf
+
+// Add this
+<VirtualHost *:80>
+    SetEnv LARAVEL_ENV local
+    DocumentRoot "/var/www/yourfolder/public"
+    ServerName yoursite.here
+
+    <Directory "/var/www/yourfolder/public">
+        Options +FollowSymLinks -MultiViews
+        AllowOverride all
+    </Directory>
+</VirtualHost>
+
+// Update Local Hosts File
+sudo vim /etc/hosts
+127.0.0.1       yoursite.here
+
+// Restart Apache
+sudo service apache2 restart
+
+// Install cURL 
+sudo apt-get install curl
+
+// Install Composer
+curl -sS https://getcomposer.org/installer | php
+
+// Make composer.phar global
+sudo mv composer.phar /usr/local/bin/composer
+
+// Install php 5 cURL
+sudo apt-get install php5-curl
+
+// Enable mod-rewrite
+sudo a2enmod rewrite
+sudo service apache2 restart
+
+// Install MCrypt
+sudo apt-get install php5-mcrypt
+
+// Enable MCrypt
+sudo php5enmod mcrypt
+
+// Goto web directory
+cd /var/www
+
+// Allow writing to web directory
+sudo chmod -R a+rwx /var/www
+
+// Restart Apache
+sudo service apache2 restart
+
+// Update your dependencies
+composer update
+
+// Autoload class map
+composer dump-autoload

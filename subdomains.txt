@@ -1,0 +1,19 @@
+# ---------- Creating a subdirectory
+# 1) Edit Vhosts file
+
+# AWS-AMI Linux VHosts
+/etc/httpd/conf.d/vhost.conf
+
+# Ubuntu VHosts
+/etc/apache2/sites-available/000-default.conf 
+
+<VirtualHost *:80>
+    DocumentRoot "/var/www/html/yourfolder"
+    ServerName yoursubdomain.yoursite.com
+    <Directory "/var/www/html/yourfolder">
+        #Options -Indexes +FollowSymLinks -MultiViews
+        Options +FollowSymLinks -MultiViews
+        AllowOverride all
+    </Directory>
+</VirtualHost>
+
