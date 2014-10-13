@@ -1,0 +1,7 @@
+  git clone git://github.com/joyent/node.git
+  cd node/
+  git tag -l
+  git checkout v0.10.32
+  ./configure
+  make
+  make install
