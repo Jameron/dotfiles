@@ -40,6 +40,7 @@ git checkout feature-branch-name
 git merge master
 
 Pull a branch that someone else made and pushed to origin:
+git fetch origin
 git checkout -b branch-name origin/branch-name 
 
 Delete a branch on origin:

@@ -1,0 +1,6 @@
+// Objective C compiler
+sudo apt-get install gobjc gnustep gnustep-make gnustep-common
+
+// Add to .bashrc file
+#GNUSTEP Environment vars 
+  . /usr/share/GNUstep/Makefiles/GNUstep.sh

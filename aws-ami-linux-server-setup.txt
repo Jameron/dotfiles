@@ -55,13 +55,7 @@ GIT_WORK_TREE=/var/www/html/yourfolder git checkout -f
 $ sudo chmod 775 post-receive
 $ exit
 
-
 $ sudo yum install php
-
-// Get Mcrypt
-$ sudo yum install php-mcrypt
-
-// Install cURL
 
 // Install Composer
 curl -sS https://getcomposer.org/installer | php
@@ -84,8 +78,6 @@ add your project push to repo, ssh back in
 
 $ cd /var/www/html/yourproject
 $ chmod -R ug+rw app/storage
-
-
 
 2) Install MYSQL Server
 $ sudo yum install mysql55-server
