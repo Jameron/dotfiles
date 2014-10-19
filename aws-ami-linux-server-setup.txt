@@ -9,7 +9,6 @@ Create you linux instance on aws website.
 
 sudo chmod 600 ~/.ssh/keyname.pem
 
-
 SSH in
 
 # Install apache
@@ -17,7 +16,7 @@ $ sudo yum install httpd
 
 2) Create your project folder
 $ cd /var/www/html
-$ sudo mkdir projectcd /var
+$ sudo mkdir project
 $ cd project
 
 3) Install git
