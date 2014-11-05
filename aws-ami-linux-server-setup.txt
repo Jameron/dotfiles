@@ -16,7 +16,7 @@ $ sudo yum install httpd
 
 2) Create your project folder
 $ cd /var/www/html
-$ sudo mkdir projectcd /var
+$ sudo mkdir project
 $ cd project
 
 3) Install git
@@ -24,6 +24,7 @@ $ sudo yum install git
 
 $ sudo git init
 $ sudo chmod -R ug+rw /var/www/html/yourproject/.git/
+$ cd ..
 $ sudo chown -R ec2-user:ec2-user yourproject/
 $ ls -l // Should say owner and group is ec2-user
 
@@ -53,13 +54,7 @@ GIT_WORK_TREE=/var/www/html/yourfolder git checkout -f
 $ sudo chmod 775 post-receive
 $ exit
 
-
 $ sudo yum install php
-
-// Get Mcrypt
-$ sudo yum install php-mcrypt
-
-// Install cURL
 
 // Install Composer
 curl -sS https://getcomposer.org/installer | php
@@ -96,8 +91,16 @@ $ sudo service httpd start
 $ sudo chkconfig mysqld on
 $ sudo service mysqld start
 
+NEW
+sudo /etc/init.d/mysqld stop
+sudo mysqld_safe --skip-grant-tables &
+mysql -u root
+use mysql;
+update user set password=PASSWORD("mynewpassword") where User='root';
+flush privileges;
+
 # Configure MySQL root user password
-mysqladmin -u root password secret123
+$ mysqladmin -u root password secret123
 
 # Create a database. 
 mysqladmin -u root -p create database_name

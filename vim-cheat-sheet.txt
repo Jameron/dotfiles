@@ -6,7 +6,7 @@ sudo apt-get install vim
 // Vundle for Vim
 cd
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-sudo vim .vimrc
+sudo vi ~/.vimrc
 
 *******************BEGIN COPY PASTE AREA
 set nocompatible " be iMproved, required
@@ -22,6 +22,7 @@ Plugin 'gmarik/Vundle.vim'
 call vundle#end() " required
 filetype plugin indent on " required
 ******************END OF COPY PASTE AREA
+
 Then Restart Vim
 :BundleInstall
 
