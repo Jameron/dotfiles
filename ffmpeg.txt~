@@ -6,5 +6,5 @@ sudo apt-get install ffmpeg gstreamer0.10-ffmpeg
 ffmpeg -y -i filename.wav -acodec alac -f ipod newfilename.m4a
 
 
-ffmpeg -y -i /home/cameron/Desktop/wavs/kill-or-be-killed.wav -acodec alac -f ipod /home/cameron/Desktop/wavs/kill-or-be-killed.m4a
+ffmpeg -y -i kill-or-be-killed.wav -acodec alac -f ipod kill-or-be-killed.m4a
 

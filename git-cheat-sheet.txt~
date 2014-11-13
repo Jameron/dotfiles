@@ -4,56 +4,47 @@ Git Cheat Sheet
 sudo apt-get update
 sudo apt-get install git
 
-// Stop tracking a tracked file:
+Stop tracking a tracked file:
 git rm -r --cached filename.ext
 
-// Check origin URL:
+Check origin URL:
 git remote show origin
 
-// Remove origin
+Remove origin
 git remote rm origin
 
-// Add new origin
+Add new origin
 git remote add origin root@yoursite.com:path/to/gitfile/projectname.git
 
-// Clone a repo:
+Clone a repo:
 git clone root@yoursite.com:path/to/gitfile/projectname.git
 
 // Edit your .gitignore file
 Add all config files and nbproject folder to .gitignore
 
-// Create new feature branch:
+Create new feature branch:
 git checkout master
 git checkout -b feature-branch-name
 
-// Push feature branch to origin:
+Push feature branch to origin:
 git push origin feature-branch-name
 
-// Pull master from origin:
+Pull master from origin:
 git pull origin master
 
-// Check out different branch on your local:
+Check out different branch on your local:
 git checkout feature-branch-name
 
-// Merge master into feature branch:
+Merge master into feature branch:
 git checkout feature-branch-name
 git merge master
 
-// Pull a branch that someone else made and pushed to origin:
+Pull a branch that someone else made and pushed to origin:
 git fetch origin
 git checkout -b branch-name origin/branch-name 
 
-// Delete a branch on origin:
+Delete a branch on origin:
 git push origin --delete feature-branch-name
-
-// Rename a local branch
-git branch -m my-hot-feature new-named-feature
-
-// Delete remote branch
-git push origin :my-hot-feature
-
-
-
 
 Best Practices
 Branch naming convention
