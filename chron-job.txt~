@@ -1,6 +1,0 @@
-// Create a CHRON Job
-
-sudo crontab -e
-
-// Runs eat.php at 4:23P.M. everyday
-23 4 * * * /usr/bin/php /var/www/test/eat.php >>/tmp/testlog.log 2>&1
