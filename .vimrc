@@ -7,6 +7,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'ap/vim-css-color'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'w0ng/vim-hybrid'
