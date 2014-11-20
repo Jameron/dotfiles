@@ -1,0 +1,27 @@
+[user]
+	name = Cameron Macfarlane
+	email = cameron.macfarlane@linktechworldwide.com
+
+[alias]
+    a = add -v
+    au = add -u
+    b = branch
+    bv = branch -v
+    br = branch -rv
+    brv = branch -rv
+    bm = branch --merged
+    bnm = branch --no-merged
+    r = remote
+    rv = remote -v
+    c = commit -v
+    ca = commit -av
+    co = checkout
+    pull = pull -v
+    d = diff
+    dt = difftool
+    last = log -1 HEAD
+    s = status
+    sh = shortlog
+    sh-qa = shortlog qa..master
+    dd = rm $(git ls-files --deleted)
+    h = log -p --
