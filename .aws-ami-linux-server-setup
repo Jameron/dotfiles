@@ -143,5 +143,3 @@ $ mysql -u root -p
 
 # Restart HTTPD so PDO is up
 $ sudo service httpd restart
-
-
