@@ -24,7 +24,8 @@ function proml {
   	local  LIGHT_GRAY="\[\033[0;37m\]"
 	# END OPTIONAL
 	local     DEFAULT="\[\033[0m\]"
-	PS1="\u@\h: \w $GREEN\$(parse_git_branch) $DEFAULT\$ "
+	PS1="\w $GREEN\$(parse_git_branch) $DEFAULT\$ "
 }
-
+# PS1="\u@\h: \w $GREEN\$(parse_git_branch) $DEFAULT\$ "
 proml
+
