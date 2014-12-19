@@ -114,3 +114,9 @@ set shortmess+=I
 " Map ctrl + s to :w
 inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> :w<cr>
+
+inoremap <C-Q> <esc>:q<cr>
+nnoremap <C-Q> :q<cr>
+
+inoremap <C-w> <esc>:vsplit<cr>
+nnoremap <C-w> :vsplit<cr>
