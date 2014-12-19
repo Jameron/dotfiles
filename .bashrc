@@ -1,12 +1,6 @@
 # .bashrc file, Cameron Macfarlane
-
-# Add git branchname completion
 source ~/git-completion.bash
-
-# Alias tailf as watch
 alias watch='tailf'
-
-# Alias git as g
 alias g='git'
 
 function parse_git_branch {
@@ -29,3 +23,5 @@ function proml {
 # PS1="\u@\h: \w $GREEN\$(parse_git_branch) $DEFAULT\$ "
 proml
 
+# Disable default ctrl+s
+stty -ixon

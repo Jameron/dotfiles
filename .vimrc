@@ -110,3 +110,7 @@ let g:lightline.colorscheme = 'hybrid'
 
 autocmd VimEnter * echo "Welcome back Cameron! You are amazing!"
 set shortmess+=I
+
+" Map ctrl + s to :w
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
