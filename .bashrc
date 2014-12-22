@@ -1,6 +1,6 @@
 # .bashrc file, Cameron Macfarlane
 source ~/git-completion.bash
-alias watch='tailf'
+alias log='tailf app/storage/logs/laravel.log'
 alias g='git'
 
 function parse_git_branch {
