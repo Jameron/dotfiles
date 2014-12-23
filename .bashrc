@@ -9,23 +9,13 @@ function parse_git_branch {
 
 function proml {
 
-	# Array with expressions
-	expressions=("\[\033[0;34m\]" "\[\033[0;31m\]" "\[\033[1;31m\]" "\[\033[0;32m\]" "\[\033[1;32m\]" "\[\033[1;37m\]" "\[\033[0;37m\]")
-
-	# Get random expression...
-	selectedexpression=${expressions[$RANDOM % ${#expressions[@]} ]}
-
-  	local        BLUE="\[\033[0;34m\]"
-	# OPTIONAL - if you want to use any of these other colors:
-  	local         RED="\[\033[0;31m\]"
-  	local   LIGHT_RED="\[\033[1;31m\]"
-  	local       GREEN="\[\033[0;32m\]"
-  	local LIGHT_GREEN="\[\033[1;32m\]"
-  	local       WHITE="\[\033[1;37m\]"
-  	local  LIGHT_GRAY="\[\033[0;37m\]"
-	# END OPTIONAL
+	# Array with colors
+	colors=( "\[\033[0;31m\]" "\[\033[1;31m\]" "\[\033[0;32m\]" "\[\033[1;32m\]" "\[\033[0;33m\]" "\[\033[1;33m\]" "\[\033[0;34m\]" "\[\033[1;34m\]" "\[\033[0;35m\]" "\[\033[0;36m\]" "\[\033[1;36m\]" "\[\033[1;37m\]" "\[\033[0;37m\]" )
+	# Get random color...
+	selectedcolor=${colors[$RANDOM % ${#colors[@]} ]}
+	# Set default color to white
 	local     DEFAULT="\[\033[0m\]"
-	PS1="\w $selectedexpression\$(parse_git_branch) $DEFAULT\$ "
+	PS1="\w $selectedcolor\$(parse_git_branch) $DEFAULT\$ "
 }
 
 proml
