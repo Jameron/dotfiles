@@ -7,6 +7,8 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'ap/vim-css-color'
+Plugin 'xsbeats/vim-blade'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'w0ng/vim-hybrid'
@@ -54,6 +56,7 @@ nmap <leader>nt :NERDTreeFind<CR>
 
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeIgnore=['\~$', 'vendor', '.git', 'bootstrap']
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
@@ -109,3 +112,13 @@ let g:lightline.colorscheme = 'hybrid'
 
 autocmd VimEnter * echo "Welcome back Cameron! You are amazing!"
 set shortmess+=I
+
+" Map ctrl + s to :w
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
+
+inoremap <C-Q> <esc>:q<cr>
+nnoremap <C-Q> :q<cr>
+
+inoremap <C-w> <esc>:vsplit<cr>
+nnoremap <C-w> :vsplit<cr>

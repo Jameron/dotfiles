@@ -1,4 +1,4 @@
-# Adding you SSH key to a server
+# Adding your SSH key to a server
 
 // Lists files in ssh directory, then if needed proceed to generate RSA key
 ls -al ~/.ssh  

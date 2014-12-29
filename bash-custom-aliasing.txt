@@ -1,0 +1,4 @@
+// To create an alias add to your bashrc file then run 
+alias watch='tailf'
+
+$ source ~/.bashrc
