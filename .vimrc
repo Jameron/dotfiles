@@ -79,25 +79,32 @@ let g:lightline = {
 	  \ 'component_function': {
 	  \   'readonly': 'MyReadonly',
 	  \   'fugitive': 'MyFugitive',
+	  \   'filename': 'MyFilename',
 	  \ },
 	  \ 'separator': { 'left': '', 'right': '' },
 	  \ 'subseparator': { 'left': '', 'right': '' }
 	  \ }
+
+function! MyFilename()
+    return ('' != expand('%:T') ? expand('%:T') : '[No Name]') 
+endfunction
+
 function! MyModified()
     let lastModified=strftime('%T',getftime(expand('%')))
     return lastModified
 endfunction
 
-    function! MyReadonly()
-		return &readonly ? '' : ''
-	endfunction
-	function! MyFugitive()
-		if exists("*fugitive#head")
-			let _ = fugitive#head()
-			return strlen(_) ? ''._ : ''
-		endif
-		return ''
-	endfunction
+function! MyReadonly()
+	return &readonly ? '' : ''
+endfunction
+
+function! MyFugitive()
+	if exists("*fugitive#head")
+		let _ = fugitive#head()
+		return strlen(_) ? ''._ : ''
+	endif
+	return ''
+endfunction
 
 let g:indentLine_color_term = 243
 let g:indentLine_char = '︙'   
