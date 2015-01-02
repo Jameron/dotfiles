@@ -69,6 +69,8 @@ GIT_WORK_TREE=/var/www/html/yourfolder git checkout -f
 $ :w
 $ :q
 $ sudo chmod 775 post-receive
+$ sudo yum install php55-pdo
+$ sudo service httpd start
 $ cd
 $ exit
 
