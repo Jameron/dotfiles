@@ -22,3 +22,5 @@ proml
 stty -ixon
 
 # PS1="\u@\h: \w $GREEN\$(parse_git_branch) $DEFAULT\$ "
+
+PROMPT_COMMAND='echo -ne "\033]0;$(basename ${PWD})\007"'

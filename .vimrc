@@ -1,5 +1,5 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              
+filetype off                  " For nerdTree
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -18,8 +18,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'itchyny/lightline.vim'
 Bundle 'cocopon/lightline-hybrid.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call vundle#end()            
 
 " JS autocompletion
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -30,7 +29,7 @@ set shiftwidth=4
 " Turn line numbering on. Turn it off with "set nonu:"
 set number
 
-" Set syntax on
+" Set syntax coloring
 syntax enable
 
 " Case  insensitive search
@@ -47,13 +46,20 @@ set clipboard=unnamedplus
 set laststatus=2
 set t_Co=256
 noh
-"set title titlestring=%{strftime('%c',getftime(expand('%')))}
 
-" NerdTree
+function! TabLabel()
+let cwd = fnamemodify('.', ':p')
+	return cwd
+    "return ('' != expand('%:T') ? expand('%:T') : '[No Name]') 
+endfunction
+set title titlestring=%{TabLabel()}
+
+" Map to ctrl + e to NERDTree
 map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 map <leader>e :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
 
+" NerdTree
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 let NERDTreeIgnore=['\~$', 'vendor', '.git', 'bootstrap']
@@ -84,6 +90,7 @@ let g:lightline = {
 	  \ 'separator': { 'left': '', 'right': '' },
 	  \ 'subseparator': { 'left': '', 'right': '' }
 	  \ }
+
 
 function! MyFilename()
     return ('' != expand('%:T') ? expand('%:T') : '[No Name]') 
@@ -124,8 +131,10 @@ set shortmess+=I
 inoremap <C-s> <esc>:w<cr>
 nnoremap <C-s> :w<cr>
 
+" Map ctrl + q to :Q
 inoremap <C-Q> <esc>:q<cr>
 nnoremap <C-Q> :q<cr>
 
+" Map ctrl + w to vertical split
 inoremap <C-w> <esc>:vsplit<cr>
 nnoremap <C-w> :vsplit<cr>
