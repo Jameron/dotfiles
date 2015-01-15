@@ -1,5 +1,0 @@
-// install ImageMagick
-yum install php-pecl-imagick
-
-// Or
-yum install php55-pecl-imagick
