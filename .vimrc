@@ -1,4 +1,4 @@
-set nocompatible              
+" Set nocompatible              
 filetype off                  " For nerdTree
 
 " set the runtime path to include Vundle and initialize
@@ -9,6 +9,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ap/vim-css-color'
 Plugin 'xsbeats/vim-blade'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'w0ng/vim-hybrid'
@@ -17,6 +19,8 @@ Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-fugitive'
 Bundle 'itchyny/lightline.vim'
 Bundle 'cocopon/lightline-hybrid.vim'
+
+set backspace=indent,eol,start
 
 call vundle#end()            
 
@@ -42,7 +46,7 @@ set hls
 set lbr
 
 " Use system clipboard for copy and paste
-set clipboard=unnamedplus
+set clipboard=unnamed
 set laststatus=2
 set t_Co=256
 noh
@@ -55,14 +59,16 @@ endfunction
 set title titlestring=%{TabLabel()}
 
 " Map to ctrl + e to NERDTree
-map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+map <C-e> :NERDTreeToggle <CR>:NERDTreeMirror<CR>
 map <leader>e :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
-
+"map <leader>y "0y
+"map <leader>p "0p
+vnoremap <leader>p "_dP
 " NerdTree
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-let NERDTreeIgnore=['\~$', 'vendor', '.git', 'bootstrap']
+let NERDTreeIgnore=['\~$','.git']
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
@@ -119,6 +125,8 @@ set mouse=a
 set mousehide
 set cursorline
 
+let g:ctrlp_regexp = 1
+
 " Change colorscheme from default to hybrid
 colorscheme hybrid "monokai 
 hi Normal ctermbg=NONE
@@ -138,3 +146,6 @@ nnoremap <C-Q> :q<cr>
 " Map ctrl + w to vertical split
 inoremap <C-w> <esc>:vsplit<cr>
 nnoremap <C-w> :vsplit<cr>
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
