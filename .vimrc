@@ -1,9 +1,14 @@
 " Set nocompatible              
 filetype off                  " For nerdTree
 
+autocmd FileType javascript nnoremap <c-o> viw :s/\v(\s*)(.*)/\1console.log\('==> \2', \2\);/  <enter> :nohl <enter><CR>
+autocmd FileType javascript nnoremap <c-j> viw :s/\v(\s*)(.*)/\1console.log\('==> \2', JSON.stringify(\2\)\);/  <enter> :nohl <enter><CR>
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+set backspace=indent,eol,start
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -26,6 +31,7 @@ call vundle#end()
 
 " JS autocompletion
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 set tabstop=4
 set shiftwidth=4
