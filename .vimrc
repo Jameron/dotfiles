@@ -125,6 +125,11 @@ function! MyFugitive()
 	return ''
 endfunction
 
+set background=dark
+colorscheme hybrid
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast_contrast = 1
+
 let g:indentLine_color_term = 243
 let g:indentLine_char = '︙'   
 set mouse=a
@@ -154,4 +159,3 @@ inoremap <C-w> <esc>:vsplit<cr>
 nnoremap <C-w> :vsplit<cr>
 vmap <Tab> >gv
 vmap <S-Tab> <gv
-
