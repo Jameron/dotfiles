@@ -35,6 +35,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " Turn line numbering on. Turn it off with "set nonu:"
 set number
