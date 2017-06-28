@@ -1,5 +1,5 @@
 <?php
-
+// php-cs-fixer fix /path/to/dir
 $fixers = [
     'blank_line_after_opening_tag' => true,
     'braces' => true,
@@ -21,6 +21,7 @@ $fixers = [
     'lowercase_constants' => true,
     'lowercase_keywords' => true,
     'method_argument_space' => true,
+    'method_separation' => true,
     'trailing_comma_in_multiline_array' => true,
     'no_multiline_whitespace_before_semicolons' => true,
     'no_blank_lines_after_class_opening' => true,
@@ -40,7 +41,7 @@ $fixers = [
     'phpdoc_types' => true,
     'phpdoc_var_without_name' => true,
     'no_leading_import_slash' => true,
-    'ordered_imports'=> ['sortAlgorithm'=>'length'], 
+    'ordered_imports'=> ['sortAlgorithm'=>'length'],
     'self_accessor' => true,
     'array_syntax' => ['syntax' => 'short'],
     'no_short_echo_tag' => true,
