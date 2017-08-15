@@ -3,6 +3,9 @@ export PATH=/usr/local/Cellar/php56/5.6.15/bin:$PATH
 export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 
 source ~/git-completion.bash
+alias c='clear'
+alias ..='cd ..'
+alias ...='cd./..'
 alias log='tail -f storage/logs/laravel.log'
 alias g='git'
 alias vim='/usr/local/Cellar/vim/7.4.903/bin/vim'
@@ -11,7 +14,6 @@ alias vi='/usr/local/Cellar/vim/7.4.903/bin/vim'
 alias ac='git add . && git add -u'
 alias pm='git commit -m "testing updates" && git push origin master'
 alias pd='git commit -m "testing updates" && git push origin develop'
-alias ss='cd /Library/WebServer/Documents/showstop5'
 alias mamp='cd /Applications/MAMP/htdocs/'
 alias web='cd /Library/WebServer/Documents/'
 
