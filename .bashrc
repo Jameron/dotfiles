@@ -11,6 +11,9 @@ function search {
 alias c='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ll='ls -la'
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias myip="curl http://ipecho.net/plain; echo"
 
 #composer shortcut commands
 alias cu='composer update'
