@@ -2,6 +2,11 @@
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/git-completion.bash
 
+# shortcut to grep search
+function search {
+    grep -rle "$1" $(pwd)
+}
+
 #misc shortcut commands
 alias c='clear'
 alias ..='cd ..'
