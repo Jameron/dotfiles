@@ -1,3 +1,4 @@
+source ~/.profile
 # .bashrc file, Cameron Macfarlane
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/git-completion.bash
@@ -35,8 +36,8 @@ alias phpini='sudo vi /etc/php5/apache2/php.ini'
 TODAY=$(date +"%Y-%m-%d")
 
 # Monitor tail end of a Laravel 5 style log file
-alias log='tailf storage/logs/laravel.log'
-alias logd='tailf storage/logs/laravel-$TODAY.log'
+alias log='tail -f storage/logs/laravel.log'
+alias logd='tail -f storage/logs/laravel-$TODAY.log'
 alias web='cd /var/www/'
 
 function parse_git_branch {
