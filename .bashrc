@@ -23,7 +23,7 @@ alias cda='composer dump-autoload'
 #laravel shortcut commands
 alias clc='php artisan cache:clear && php artisan config:cache'
 alias remigrate='php artisan migrate:refresh --seed'
-alias migrate='php artisan migrate --seed'
+alias migrate='php artisan migrate'
 
 # git shortcut commands
 alias g='git'
