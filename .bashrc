@@ -8,7 +8,8 @@ function search {
     grep -rle "$1" $(pwd)
 }
 
-#misc shortcut commands
+# misc shortcut commands
+alias v='vi'
 alias c='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -16,11 +17,11 @@ alias ll='ls -la'
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias myip="curl http://ipecho.net/plain; echo"
 
-#composer shortcut commands
+# composer shortcut commands
 alias cu='composer update'
 alias cda='composer dump-autoload'
 
-#laravel shortcut commands
+# laravel shortcut commands
 alias clc='php artisan cache:clear && php artisan config:cache'
 alias remigrate='php artisan migrate:refresh --seed'
 alias migrate='php artisan migrate'
