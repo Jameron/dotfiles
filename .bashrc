@@ -25,6 +25,7 @@ alias cda='composer dump-autoload'
 alias clc='php artisan cache:clear && php artisan config:cache'
 alias remigrate='php artisan migrate:refresh --seed'
 alias migrate='php artisan migrate'
+alias publish='php artisan vendor:publish'
 
 # git shortcut commands
 alias g='git'
