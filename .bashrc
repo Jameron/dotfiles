@@ -17,6 +17,9 @@ alias ll='ls -la'
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias myip="curl http://ipecho.net/plain; echo"
 
+# npm shortcut commands
+alias dev="npm run dev"
+
 # composer shortcut commands
 alias cu='composer update'
 alias cda='composer dump-autoload'
