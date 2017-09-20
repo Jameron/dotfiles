@@ -3,6 +3,11 @@ source ~/.profile
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/git-completion.bash
 
+# function for fixing a git message
+function recommit {
+	git commit --amend -m "$1"
+}
+
 # shortcut to grep search
 function search {
     grep -rle "$1" $(pwd)
@@ -32,11 +37,13 @@ alias publish='php artisan vendor:publish'
 
 # git shortcut commands
 alias g='git'
+alias a='add'
 alias ac='git add . && git add -u && git commit -m "testing updates, debugging"'
 alias pm='git push origin master'
 alias pd='git push origin develop'
 alias plm='git pull origin master'
 alias phpini='sudo vi /etc/php5/apache2/php.ini'
+
 
 TODAY=$(date +"%Y-%m-%d")
 
