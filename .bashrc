@@ -41,7 +41,7 @@ alias pd='git push origin develop'
 alias plm='git pull origin master'
 
 
-# function for adding and adding a git message
+# function for adding and adding a git message .
 function commit() {
 	git add . && git add -u && git commit -m "$1"
 }
