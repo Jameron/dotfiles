@@ -32,14 +32,10 @@ alias migrate='php artisan migrate'
 alias publish='php artisan vendor:publish'
 
 # git shortcut commands
-alias g='git'
-alias a='add'
-alias c='commit'
 alias ac='git add . && git add -u && git commit -m "testing updates, debugging"'
 alias pm='git push origin master'
 alias pd='git push origin develop'
 alias plm='git pull origin master'
-
 
 # function for adding and adding a git message.
 function commit() {
