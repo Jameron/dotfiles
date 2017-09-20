@@ -42,7 +42,7 @@ alias plm='git pull origin master'
 
 
 # function for fixing a git message
-function commit {
+function commit() {
 	git add . && git add -u && git commit -m "$1"
 }
 
