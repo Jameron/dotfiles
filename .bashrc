@@ -9,10 +9,14 @@ function search {
     grep -rle "$1" $(pwd)
 }
 
+# go up a directory then into the folder
+function .. {
+    cd ../"$1"
+}
+
 # misc shortcut commands
 alias v='vi'
 alias c='clear'
-alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -la'
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
