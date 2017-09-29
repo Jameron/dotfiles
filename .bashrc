@@ -40,11 +40,17 @@ alias ac='git add . && git add -u && git commit -m "testing updates, debugging"'
 alias pm='git push origin master'
 alias pd='git push origin develop'
 alias plm='git pull origin master'
+alias pt='git push -f --tags'
 
-# function for adding and adding a git message.
+# function for adding all files and commiting with a message.
 function commit() {
 	git add . && git add -u && git commit -m "$1"
 }
+
+function tag() {
+    git tag -f -a $1 -m "$2"
+}
+
 
 alias phpini='sudo vi /etc/php5/apache2/php.ini'
 
