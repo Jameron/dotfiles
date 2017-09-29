@@ -11,12 +11,12 @@ call vundle#begin()
 set backspace=indent,eol,start
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ap/vim-css-color'
 Plugin 'xsbeats/vim-blade'
-Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'pangloss/vim-javascript'
+Plugin 'posva/vim-vue'
+Plugin 'mustache/vim-mustache-handlebars'
 Bundle 'scrooloose/nerdtree'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'scrooloose/nerdcommenter'
@@ -24,6 +24,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-fugitive'
 Bundle 'itchyny/lightline.vim'
 Bundle 'cocopon/lightline-hybrid.vim'
+" Plugin 'kien/ctrlp.vim'
 
 set backspace=indent,eol,start
 
@@ -41,6 +42,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 
 Plug 'lumiliet/vim-twig'
+
 
 " Any valid git URL is allowed
 "Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -74,9 +76,11 @@ call plug#end()
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
+filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set rtp+=/usr/local/opt/fzf
 
 " Turn line numbering on. Turn it off with "set nonu:"
 set number
@@ -100,9 +104,9 @@ set t_Co=256
 noh
 
 function! TabLabel()
-let cwd = fnamemodify('.', ':p')
+	let cwd = fnamemodify('.', ':p')
 	return cwd
-    "return ('' != expand('%:T') ? expand('%:T') : '[No Name]') 
+	"return ('' != expand('%:T') ? expand('%:T') : '[No Name]') 
 endfunction
 set title titlestring=%{TabLabel()}
 
@@ -113,9 +117,10 @@ nmap <leader>nt :NERDTreeFind<CR>
 "map <leader>y "0y
 "map <leader>p "0p
 vnoremap <leader>p "_dP
+
 " NerdTree
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.swn', '\.swj','\.swk','\.swl','.sw*']
 let NERDTreeIgnore=['\~$','.git']
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=1
@@ -128,7 +133,7 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+      \             [ 'fugitive', 'readonly', 'modified', 'filename' ] ],
       \   'right': [ ['lineinfo'],
       \             ['percent'],
       \             ['filetype'] ]
@@ -137,9 +142,9 @@ let g:lightline = {
 	  \   'lineinfo': ' %3l:%-2v',
 	  \ },
 	  \ 'component_function': {
+	  \   'filename': 'MyFilename',
 	  \   'readonly': 'MyReadonly',
 	  \   'fugitive': 'MyFugitive',
-	  \   'filename': 'MyFilename',
 	  \ },
 	  \ 'separator': { 'left': '', 'right': '' },
 	  \ 'subseparator': { 'left': '', 'right': '' }
@@ -167,18 +172,11 @@ function! MyFugitive()
 	return ''
 endfunction
 
-set background=dark
-colorscheme hybrid
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast_contrast = 1
-
 let g:indentLine_color_term = 243
 let g:indentLine_char = '︙'   
 set mouse=a
 set mousehide
 set cursorline
-
-let g:ctrlp_regexp = 1
 
 " Change colorscheme from default to hybrid
 colorscheme hybrid "monokai 
@@ -201,3 +199,8 @@ inoremap <C-w> <esc>:vsplit<cr>
 nnoremap <C-w> :vsplit<cr>
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+
+" Map ctrl + p to :FZF
+inoremap <C-p> <esc>:FZF<cr>
+nnoremap <C-p> :FZF<cr>
