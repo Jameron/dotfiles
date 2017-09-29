@@ -1,7 +1,9 @@
-source ~/.profile
 # .bashrc file, Cameron Macfarlane
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/git-completion.bash
+export PATH="/usr/local/php5-7.1.4-20170506-100436/bin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
+# /usr/local/php5-7.1.4-20170506-100436
 
 
 # shortcut to grep search
@@ -62,6 +64,7 @@ TODAY=$(date +"%Y-%m-%d")
 alias log='tail -f storage/logs/laravel.log'
 alias logd='tail -f storage/logs/laravel-$TODAY.log'
 alias web='cd /var/www/'
+alias macweb='cd /Library/WebServer/Documents'
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
