@@ -1,7 +1,9 @@
-source ~/.profile
 # .bashrc file, Cameron Macfarlane
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/git-completion.bash
+#export PATH="/usr/local/php5-7.1.4-20170506-100436:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+# /usr/local/php5-7.1.4-20170506-100436
 
 
 # shortcut to grep search
