@@ -54,10 +54,7 @@ function tag() {
     git tag -f -a $1 -m "$2"
 }
 
-
 alias phpini='sudo vi /etc/php5/apache2/php.ini'
-
-
 TODAY=$(date +"%Y-%m-%d")
 
 # Monitor tail end of a Laravel 5 style log file
