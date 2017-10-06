@@ -1,3 +1,4 @@
+source ~/.profile
 # .bashrc file, Cameron Macfarlane
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/git-completion.bash
@@ -14,6 +15,9 @@ function search {
 function .. {
     cd ../"$1"
 }
+
+#docker commands
+alias dockupami="docker run -it amazonlinux:latest /bin/bash
 
 # misc shortcut commands
 alias v='vi'
