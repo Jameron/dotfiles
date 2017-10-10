@@ -18,6 +18,7 @@ function .. {
 
 #docker commands
 alias dockupami="docker run -it amazonlinux:latest /bin/bash"
+alias dockupapache="docker run -it killacam/apache /bin/bash"
 
 # misc shortcut commands
 alias v='vi'
