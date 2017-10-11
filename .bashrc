@@ -19,6 +19,7 @@ function .. {
 #docker commands
 alias dockupami="docker run -it amazonlinux:latest /bin/bash"
 alias dockupapache="docker run -it killacam/apache /bin/bash"
+alias dockup="boot2docker init && boot2docker up && eval \"\$(boot2docker shellinit)\""
 
 # misc shortcut commands
 alias v='vi'
@@ -48,6 +49,10 @@ alias pm='git push origin master'
 alias pd='git push origin develop'
 alias plm='git pull origin master'
 alias pt='git push -f --tags'
+
+function ignore() {
+    git update-index --assume-unchanged $1
+}
 
 # function for adding all files and commiting with a message.
 function commit() {
