@@ -19,7 +19,7 @@ function .. {
 #docker commands
 alias dockupami="docker run -it amazonlinux:latest /bin/bash"
 alias dockupapache="docker run -it killacam/apache /bin/bash"
-alias dockup="boot2docker init && boot2docker up && eval \"\$(boot2docker shellinit)\""
+alias dockup="docker-machine start default && eval \"\$(docker-machine env default)\""
 
 # misc shortcut commands
 alias v='vi'

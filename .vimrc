@@ -21,8 +21,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-fugitive'
-Bundle 'itchyny/lightline.vim'
 Bundle 'cocopon/lightline-hybrid.vim'
 " Plugin 'kien/ctrlp.vim'
 
