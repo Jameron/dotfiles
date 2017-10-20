@@ -16,10 +16,16 @@ function .. {
     cd ../"$1"
 }
 
-#docker commands
+# docker commands
+alias csg="cd /Users/Web/carbon-solutions-group"
 alias dockupami="docker run -it amazonlinux:latest /bin/bash"
+alias dockupmysql="docker run -it killacam/mysql /bin/bash"
+alias dockmysql="docker run -it -p 3306:3306 -v $(pwd)/my.cnf:/etc/my.cnf killacam/mysql;"
+
 alias dockupapache="docker run -it killacam/apache /bin/bash"
-alias dockup="docker-machine start default && eval \"\$(docker-machine env default)\""
+alias startmachine="docker-machine start default"
+alias connectmachine="eval \"\$(docker-machine env default)\""
+alias dockup="docker-compose up"
 
 # misc shortcut commands
 alias v='vi'
@@ -42,6 +48,8 @@ alias remigrate='php artisan migrate:refresh --seed'
 alias migrate='php artisan migrate'
 alias seed='php artisan migrate db:seed'
 alias publish='php artisan vendor:publish'
+
+alias laravelperms="sudo chmod -R a+rw "
 
 # git shortcut commands
 alias ac='git add . && git add -u && git commit -m "testing updates, debugging"'
