@@ -3,7 +3,7 @@ source ~/.profile
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/git-completion.bash
 #export PATH="/usr/local/php5-7.1.4-20170506-100436/bin:$PATH"
-export PATH="/usr/local/php5-7.1.1-20170213-100732/bin:$PATH"
+#export PATH="/usr/local/php5-7.1.1-20170213-100732/bin:$PATH"
 
 # shortcut to grep search
 function search {
@@ -76,8 +76,8 @@ TODAY=$(date +"%Y-%m-%d")
 # Monitor tail end of a Laravel 5 style log file
 alias log='tail -f storage/logs/laravel.log'
 alias logd='tail -f storage/logs/laravel-$TODAY.log'
-alias web='cd /var/www/'
-alias macweb='cd /Library/WebServer/Documents'
+alias www='cd /var/www/'
+alias docs='cd /Library/WebServer/Documents'
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
@@ -102,3 +102,6 @@ stty -ixon
 if [ -e /etc/profile.d/vte.sh ]; then
     . /etc/profile.d/vte.sh
 fi
+
+# not sure what this does
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
