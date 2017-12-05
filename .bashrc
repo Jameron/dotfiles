@@ -5,7 +5,6 @@ source ~/git-completion.bash
 #export PATH="/usr/local/php5-7.1.4-20170506-100436/bin:$PATH"
 export PATH="/usr/local/php5-7.1.1-20170213-100732/bin:$PATH"
 
-
 # shortcut to grep search
 function search {
     grep -rle "$1" $(pwd)
@@ -98,3 +97,8 @@ PROMPT_COMMAND='echo -ne "\033]0;$(basename ${PWD})\007"'
 
 # Disable default ctrl+s
 stty -ixon
+
+# including this ensures that new gnome-terminal tabs keep the parent `pwd` !
+if [ -e /etc/profile.d/vte.sh ]; then
+    . /etc/profile.d/vte.sh
+fi
