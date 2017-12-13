@@ -22,6 +22,7 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'groenewege/vim-less'
 Bundle 'cocopon/lightline-hybrid.vim'
+Bundle 'tpope/vim-fugitive'
 " Plugin 'kien/ctrlp.vim'
 
 set backspace=indent,eol,start
@@ -143,11 +144,11 @@ let g:lightline = {
 	  \   'filename': 'MyFilename',
 	  \   'readonly': 'MyReadonly',
 	  \   'fugitive': 'MyFugitive',
+      \   'gitbranch': 'fugitive#head',
 	  \ },
 	  \ 'separator': { 'left': '', 'right': '' },
 	  \ 'subseparator': { 'left': '', 'right': '' }
 	  \ }
-
 
 function! MyFilename()
     return ('' != expand('%:T') ? expand('%:T') : '[No Name]') 
