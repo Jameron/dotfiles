@@ -2,8 +2,8 @@ source ~/.profile
 # .bashrc file, Cameron Macfarlane
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/git-completion.bash
-#export PATH="/usr/local/php5-7.1.4-20170506-100436/bin:$PATH"
-export PATH="/usr/local/php5-7.1.1-20170213-100732/bin:$PATH"
+#export PATH="/usr/local/php5-7.1.1-20170213-100732/bin:$PATH"
+export PATH="/Applications/MAMP/bin/php/php7.1.1/bin:$PATH"
 
 # shortcut to grep search
 function search {
@@ -13,6 +13,10 @@ function search {
 # go up a directory then into the folder
 function .. {
     cd ../"$1"
+}
+
+function project {
+    cd /Library/WebServer/Documents/"$1"
 }
 
 # docker commands
