@@ -205,4 +205,4 @@ vmap <S-Tab> <gv
 inoremap <C-p> <esc>:FZF<cr>
 nnoremap <C-p> :FZF<cr>
 let g:hybrid_reduced_contrast = 1
-" set background=dark
+set background=dark
