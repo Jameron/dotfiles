@@ -97,7 +97,8 @@ set hls
 set lbr
 
 " Use system clipboard for copy and paste
-set clipboard=unnamed
+set clipboard=unnamedplus
+set paste
 set laststatus=2
 set t_Co=256
 noh
