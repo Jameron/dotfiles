@@ -188,8 +188,13 @@ autocmd VimEnter * echo "Welcome back Cameron! You are amazing!"
 set shortmess+=I
 
 " Map ctrl + s to :w
-inoremap <C-s> <esc>:w<cr>
-nnoremap <C-s> :w<cr>
+"inoremap <C-s> <esc>:w<cr>
+"nnoremap <C-s> :w<cr>
+
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
+imap <c-s> <Esc>:w<CR>a
 
 " Map ctrl + q to :Q
 inoremap <C-Q> <esc>:q<cr>

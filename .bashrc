@@ -27,8 +27,12 @@ alias startmachine="docker-machine start default"
 alias connectmachine="eval \"\$(docker-machine env default)\""
 alias dockup="docker-compose up"
 
+# vim aliases
+alias v='vimx'
+alias vi='vimx'
+alias vim='vimx'
+
 # misc shortcut commands
-alias v='vi'
 alias c='clear'
 alias ...='cd ../..'
 alias ll='ls -la'
