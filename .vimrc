@@ -120,8 +120,7 @@ vnoremap <leader>p "_dP
 
 " NerdTree
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.swn', '\.swj','\.swk','\.swl','.sw*']
-let NERDTreeIgnore=['\~$','.git']
+let NERDTreeIgnore=[ '\~$', '\.git', '\.sw']
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
