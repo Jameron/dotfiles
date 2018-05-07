@@ -16,6 +16,10 @@ function project {
     cd /Library/WebServer/Documents/"$1"
 }
 
+function listp {
+	ps aux | grep "$1"
+}
+
 # docker commands
 alias csg="cd /Users/Web/carbon-solutions-group"
 alias dockupami="docker run -it amazonlinux:latest /bin/bash"
