@@ -1,4 +1,4 @@
-" Set nocompatible              
+" Set nocompatible
 filetype off                  " For nerdTree
 
 autocmd FileType javascript nnoremap <c-o> viw :s/\v(\s*)(.*)/\1console.log\('==> \2', \2\);/  <enter> :nohl <enter><CR>
@@ -17,17 +17,18 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
 Plugin 'posva/vim-vue'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mileszs/ack.vim'
+Plugin 'ntpeters/vim-better-whitespace'
 Bundle 'scrooloose/nerdtree'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'groenewege/vim-less'
 Bundle 'cocopon/lightline-hybrid.vim'
 Bundle 'tpope/vim-fugitive'
-" Plugin 'kien/ctrlp.vim'
 
 set backspace=indent,eol,start
 
-call vundle#end()            
+call vundle#end()
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
@@ -41,6 +42,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 
 Plug 'lumiliet/vim-twig'
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plugin 'burnettk/vim-angular'
 
 
 " Any valid git URL is allowed
@@ -71,6 +76,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Initialize plugin system
 call plug#end()
 
+" whitespace cleanup
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+
 " JS autocompletion
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
@@ -97,7 +106,8 @@ set hls
 set lbr
 
 " Use system clipboard for copy and paste
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
+set clipboard=unnamed
 set paste
 set laststatus=2
 set t_Co=256
@@ -106,7 +116,7 @@ noh
 function! TabLabel()
 	let cwd = fnamemodify('.', ':p')
 	return cwd
-	"return ('' != expand('%:T') ? expand('%:T') : '[No Name]') 
+	"return ('' != expand('%:T') ? expand('%:T') : '[No Name]')
 endfunction
 set title titlestring=%{TabLabel()}
 
@@ -152,7 +162,7 @@ let g:lightline = {
 	  \ }
 
 function! MyFilename()
-    return ('' != expand('%:T') ? expand('%:T') : '[No Name]') 
+    return ('' != expand('%:T') ? expand('%:T') : '[No Name]')
 endfunction
 
 function! MyModified()
@@ -173,13 +183,13 @@ function! MyFugitive()
 endfunction
 
 let g:indentLine_color_term = 243
-let g:indentLine_char = '︙'   
+let g:indentLine_char = '︙'
 set mouse=a
 set mousehide
 set cursorline
 
 " Change colorscheme from default to hybrid
-colorscheme hybrid "monokai 
+colorscheme hybrid "monokai
 hi Normal ctermbg=NONE
 let g:lightline.colorscheme = 'hybrid'
 
@@ -193,7 +203,6 @@ set shortmess+=I
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
-imap <c-s> <Esc>:w<CR>a
 
 " Map ctrl + q to :Q
 inoremap <C-Q> <esc>:q<cr>
@@ -209,5 +218,16 @@ vmap <S-Tab> <gv
 " Map ctrl + p to :FZF
 inoremap <C-p> <esc>:FZF<cr>
 nnoremap <C-p> :FZF<cr>
+let g:hybrid_reduced_contrast = 1
+
+" Remap pane shifting
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+" silver searcher with Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Uncomment if on Linux
+"set background=dark
 let g:hybrid_reduced_contrast = 1
 set background=dark
