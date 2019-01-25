@@ -25,6 +25,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'groenewege/vim-less'
 Bundle 'cocopon/lightline-hybrid.vim'
 Bundle 'tpope/vim-fugitive'
+Plugin 'vim-vdebug/vdebug'
 
 set backspace=indent,eol,start
 
