@@ -16,6 +16,10 @@ function project {
     cd /Library/WebServer/Documents/"$1"
 }
 
+function listp {
+	ps aux | grep "$1"
+}
+
 # docker commands
 alias csg="cd /Users/Web/carbon-solutions-group"
 alias dockupami="docker run -it amazonlinux:latest /bin/bash"
@@ -82,6 +86,7 @@ TODAY=$(date +"%Y-%m-%d")
 alias log='tail -f storage/logs/laravel.log'
 alias llog='tail -f storage/logs/lumen.log'
 alias logd='tail -f storage/logs/laravel-$TODAY.log'
+alias logl='tail -f storage/logs/lumen.log'
 alias www='cd /var/www/'
 alias docs='cd /Library/WebServer/Documents'
 
