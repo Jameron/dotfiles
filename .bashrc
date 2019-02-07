@@ -80,6 +80,7 @@ TODAY=$(date +"%Y-%m-%d")
 
 # Monitor tail end of a Laravel 5 style log file
 alias log='tail -f storage/logs/laravel.log'
+alias llog='tail -f storage/logs/lumen.log'
 alias logd='tail -f storage/logs/laravel-$TODAY.log'
 alias www='cd /var/www/'
 alias docs='cd /Library/WebServer/Documents'
