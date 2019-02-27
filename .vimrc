@@ -107,8 +107,10 @@ set hls
 set lbr
 
 " Use system clipboard for copy and paste
-" set clipboard=unnamedplus
-set clipboard=unnamed
+set clipboard=unnamedplus
+
+" for MacOS use this line
+" set clipboard=unnamed
 set paste
 set laststatus=2
 set t_Co=256
@@ -185,7 +187,7 @@ endfunction
 
 let g:indentLine_color_term = 243
 let g:indentLine_char = '︙'
-set mouse=a
+set mouse=r
 set mousehide
 set cursorline
 
