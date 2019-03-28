@@ -70,9 +70,17 @@ function ignore() {
     git update-index --assume-unchanged $1
 }
 
-# function for adding all files and commiting with a message.
+# function for commiting with branch name prefixed to commit message.
 function commit() {
-	git add . && git add -u && git commit -m "$1"
+	BRANCH="$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)"
+
+	if [[ "${BRANCH}" =~ (NGAPI-[0-9]+) ]]; then
+		git commit -m "[${BASH_REMATCH[1]}] $1"
+	elif [[ "${BRANCH}" =~ (ENGR-[0-9]+) ]]; then
+		git commit -m "[${BASH_REMATCH[1]}] $1"
+	else
+		git commit -m "[${BRANCH}] $1"
+	fi
 }
 
 function tag() {
