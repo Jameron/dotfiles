@@ -187,7 +187,7 @@ endfunction
 
 let g:indentLine_color_term = 243
 let g:indentLine_char = '︙'
-set mouse=r
+set mouse=a
 set mousehide
 set cursorline
 

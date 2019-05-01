@@ -51,7 +51,7 @@ alias cu='composer update'
 alias cda='composer dump-autoload'
 
 # laravel shortcut commands
-alias clc='php artisan cache:clear && php artisan config:cache'
+alias clc='php artisan cache:clear'
 alias remigrate='php artisan migrate:refresh --seed'
 alias migrate='php artisan migrate'
 alias seed='php artisan migrate db:seed'
