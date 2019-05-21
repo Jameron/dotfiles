@@ -26,6 +26,9 @@ Bundle 'groenewege/vim-less'
 Bundle 'cocopon/lightline-hybrid.vim'
 Bundle 'tpope/vim-fugitive'
 Plugin 'vim-vdebug/vdebug'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 set backspace=indent,eol,start
 
@@ -107,10 +110,8 @@ set hls
 set lbr
 
 " Use system clipboard for copy and paste
-set clipboard=unnamedplus
-
-" for MacOS use this line
-" set clipboard=unnamed
+" set clipboard=unnamedplus
+set clipboard=unnamed
 set paste
 set laststatus=2
 set t_Co=256
@@ -232,5 +233,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Uncomment if on Linux
 "set background=dark
-let g:hybrid_reduced_contrast = 1
-set background=dark
+
+" Uncomment if on Linux
+"set background=dark
+"let g:hybrid_reduced_contrast = 1
