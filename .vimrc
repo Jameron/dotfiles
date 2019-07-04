@@ -110,8 +110,12 @@ set hls
 set lbr
 
 " Use system clipboard for copy and paste
-" set clipboard=unnamedplus
-set clipboard=unnamed
+" uncomment on linux
+set clipboard=unnamedplus
+
+" uncomment if on macOS
+"set clipboard=unnamed
+
 set paste
 set laststatus=2
 set t_Co=256
@@ -232,8 +236,4 @@ nmap <silent> <A-Right> :wincmd l<CR>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Uncomment if on Linux
-"set background=dark
-
-" Uncomment if on Linux
-"set background=dark
-"let g:hybrid_reduced_contrast = 1
+set background=dark

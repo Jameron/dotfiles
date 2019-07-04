@@ -88,12 +88,13 @@ function tag() {
 }
 
 alias phpini='sudo vi /etc/php5/apache2/php.ini'
-TODAY=$(date +"%Y-%m-%d")
+TODAY=$(date -u +"%Y-%m-%d")
 
 # Monitor tail end of a Laravel 5 style log file
 alias log='tail -f storage/logs/laravel.log'
 alias llog='tail -f storage/logs/lumen.log'
 alias logd='tail -f storage/logs/laravel-$TODAY.log'
+alias logld='tail -f storage/logs/lumen-$TODAY.log'
 alias logl='tail -f storage/logs/lumen.log'
 alias www='cd /var/www/'
 alias docs='cd /Library/WebServer/Documents'
