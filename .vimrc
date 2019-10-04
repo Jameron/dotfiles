@@ -29,6 +29,7 @@ Plugin 'vim-vdebug/vdebug'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'vim-syntastic/syntastic'
 
 set backspace=indent,eol,start
 
@@ -237,3 +238,14 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Uncomment if on Linux
 set background=dark
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
