@@ -30,6 +30,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'zxqfl/tabnine-vim'
 
 set backspace=indent,eol,start
 
