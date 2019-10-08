@@ -1,5 +1,6 @@
 " Set nocompatible
 filetype off                  " For nerdTree
+filetype plugin on " For NERDCommenter
 
 autocmd FileType javascript nnoremap <c-o> viw :s/\v(\s*)(.*)/\1console.log\('==> \2', \2\);/  <enter> :nohl <enter><CR>
 autocmd FileType javascript nnoremap <c-j> viw :s/\v(\s*)(.*)/\1console.log\('==> \2', JSON.stringify(\2\)\);/  <enter> :nohl <enter><CR>
