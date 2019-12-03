@@ -87,6 +87,10 @@ call plug#end()
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+
+" ctrl+p show dotfiles
+let g:ctrlp_show_hidden = 1
+
 " JS autocompletion
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP

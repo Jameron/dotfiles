@@ -60,6 +60,7 @@ alias publish='php artisan vendor:publish'
 alias laravelperms="sudo chmod -R a+rw "
 
 # git shortcut commands
+alias history="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 alias ac='git add . && git add -u && git commit -m "testing updates, debugging"'
 alias pm='git push origin master'
 alias pd='git push origin develop'
