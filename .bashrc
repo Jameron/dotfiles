@@ -56,6 +56,7 @@ alias remigrate='php artisan migrate:refresh --seed'
 alias migrate='php artisan migrate'
 alias seed='php artisan migrate db:seed'
 alias publish='php artisan vendor:publish'
+alias migratestatus='php artisan migrate:status'
 
 alias laravelperms="sudo chmod -R a+rw "
 
